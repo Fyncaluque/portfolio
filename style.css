@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto; /* Centrar contenido*/
+}
+
+/* Header */
+header {
+    padding: 40px 0;
+}
+header .logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+header .logo p {
+    color: #9b9b9b;
+}
+
+/* Barra de busqueda */
+header form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+header .search-bar {
+    width: 70%;
+    height: 40px;
+    line-height: 40px; /**/
+    background: #FFF;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Categorias */
+header .categories{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /*Si los elemmentos que contiene son demasiados los pasa a la siguiente fila*/
+}
+header .categories a{
+    color: #9b9b9b;
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 700; /*Para seleccionar negrita segun la fuente*/
+}
+header .categories a.active {
+    color: #000;
+}
+
+/* Grilla */
+.grid{
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s linear 1s;
+}
+.grid.uploaded-image{
+    opacity: 1;
+}
+.grid .item{
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    width: calc(33.3333% - 20px);
+}
+.grif .item-content{
+    position: relative;
+}
+.grid .item img{
+    width: 100%;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+footer .social{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+footer .social a{
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: #000;
+    color: #FFF;
+    text-align: center;
+    border-radius: 100px;
+    transition: .3s ease all;
+}
+
+footer .social .twitter{background: #1da1f2;}
+footer .social .facebook{background: #3b5998;}
+footer .social .instagram{background: #c13584;}
+
+footer .social a i {
+    font-size: 20px;
+    line-height: 60px;
+}
+
+footer .icon-social:hover a{
+    animation: icono .5s ease;
+}
+
+@keyframes icono {
+    from {
+        transform: rotate3d(0,0,0,0);
+    }
+    to{
+        transform: rotate3d(0,1,0,360deg);
+    }
+}
+
+footer .created-by{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #c13584;
+}
+
+footer .created-by a {color: #000;}
+footer .created-by a:hover {text-decoration: underline;}
+
+@media screen and (max-width: 700px){
+    .grid .item{
+        width: calc(50% - 20px);
+    }
+    header .search-bar{
+        width: 100%;
+    }
+    footer .social a{
+        margin: 10px;
+    }
+}
